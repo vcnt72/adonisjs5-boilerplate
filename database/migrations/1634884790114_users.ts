@@ -10,7 +10,7 @@ export default class Users extends BaseSchema {
       table.string('password').notNullable()
       table.string('email').notNullable()
       table.integer('role_id').unsigned().references('roles.id').onDelete('SET NULL')
-
+      table.string('token_hash')
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */

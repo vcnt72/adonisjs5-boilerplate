@@ -42,6 +42,9 @@ const databaseConfig: DatabaseConfig = {
         password: Env.get('MYSQL_PASSWORD', ''),
         database: Env.get('MYSQL_DB_NAME'),
       },
+      seeders: {
+        paths: ['./database/seeders/MainSeeder'],
+      },
       migrations: {
         naturalSort: true,
       },

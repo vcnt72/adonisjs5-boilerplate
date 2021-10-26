@@ -1,0 +1,8 @@
+export enum ResponseCode {
+  SUCCESS = '2000',
+  DATA_NOT_FOUND = '4004',
+  BAD_CREDENTIALS = '4011',
+  UNKNOWN_ERROR = '2001',
+  BAD_REQUEST = '4000',
+  ROUTE_NOT_FOUND = '400',
+}
