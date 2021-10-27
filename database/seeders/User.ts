@@ -11,11 +11,16 @@ export default class UserSeeder extends BaseSeeder {
 
     const password = await Hash.make('1meja-Admin#123')
 
-    const user = await User.create({
-      fullname: 'superuser',
-      email: 'admin@admin.com',
-      password,
-    })
+    const user = await User.firstOrNew(
+      {
+        email: 'admin@admin.com',
+      },
+      {
+        fullname: 'superuser',
+        email: 'admin@admin.com',
+        password,
+      }
+    )
     if (role != null) {
       await user.related('role').associate(role)
     }
