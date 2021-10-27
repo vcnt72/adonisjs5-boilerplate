@@ -12,6 +12,6 @@ COPY . ./
 
 RUN npm run build
 
-COPY /src/.env /src/build/
+COPY .env /src/build/
 
 CMD [ "node", "./build/server.js" ]

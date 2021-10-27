@@ -1,11 +1,13 @@
 version: '3.8'
 services:
   api:
+    container_name: adonisjs5-app
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        - REDIS_HOST=redis://host.docker.internal
-        - MYSQL_HOST=host.docker.internal
+    environment:
+      - REDIS_HOST=host.docker.internal
+      - MYSQL_HOST=host.docker.internal
     ports:
       - 3333:3333
+    restart: always
